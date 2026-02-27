@@ -152,7 +152,7 @@ Several ASL letters have very similar hand shapes (e.g., C vs X, U vs K, M vs N 
 ## Project Structure
 
 ```
-testing/
+Edusign-Bridge/
 ├── flutter-app/
 │   ├── android/app/src/main/
 │   │   ├── kotlin/.../
