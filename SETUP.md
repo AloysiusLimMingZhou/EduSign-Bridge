@@ -107,12 +107,6 @@ flutter run
 
 The first build takes 2-5 minutes (Gradle needs to download dependencies and compile native code). Subsequent builds are much faster.
 
-If you want better performance (smoother camera, faster inference):
-
-```bash
-flutter run --release
-```
-
 ---
 
 ## Step 6 — Using the App
