@@ -1,0 +1,9 @@
+node_modules/
+lib/
+# Environment & secrets
+.env
+.env.*
+*.local
+serviceAccountKey.json
+*-firebase-adminsdk-*.json
+service-account-*.json

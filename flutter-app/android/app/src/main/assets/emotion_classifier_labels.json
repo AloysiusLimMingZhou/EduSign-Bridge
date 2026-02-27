@@ -1,0 +1,12 @@
+{
+  "labels": [
+    "angry",
+    "confused",
+    "down",
+    "happy",
+    "neutral",
+    "questioning"
+  ],
+  "num_classes": 6,
+  "num_features": 52
+}

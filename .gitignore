@@ -1,0 +1,80 @@
+# Root project gitignore
+
+# Logs and debug outputs
+*.log
+loader.java
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+.DS_Store?
+
+# Sensitive files
+*.key
+*.pem
+*.p12
+secret.*
+credentials.json
+
+# Large model files (track via Git LFS or external storage)
+*.tflite
+*.keras
+*.h5
+*.pb
+
+# Datasets (too large for Git)
+sign_language_dataset/
+
+# Firebase Service Account Keys (CRITICAL - NEVER COMMIT)
+**/serviceAccountKey.json
+**/*-firebase-adminsdk-*.json
+**/service-account-*.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+ENV/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Training outputs
+checkpoints/
+saved_models/
+logs/
+runs/
+wandb/
+
+# Data files
+*.npy
+*.npz
+*.csv
+*.pkl
+*.pickle
+raw_data/
+processed_data/
+
+# Desktop-only test directories (not needed for mobile app)
+emotion-test/
+sign-test/
+test/
+
+# Environment variables
+.env
+.env.*
+
+# MediaPipe model files (large binaries)
+*.task
+

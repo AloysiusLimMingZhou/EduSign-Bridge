@@ -1,0 +1,66 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "ai-real-time-voice-to-sign",
+          "appId": "1:305294479713:android:6e0caf8f4d559c957f7520",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "ai-real-time-voice-to-sign",
+          "configurations": {
+            "android": "1:305294479713:android:6e0caf8f4d559c957f7520",
+            "ios": "1:305294479713:ios:d3a94f570cc35d6b7f7520",
+            "macos": "1:305294479713:ios:d3a94f570cc35d6b7f7520",
+            "web": "1:305294479713:web:0d45cffb0b9be5947f7520",
+            "windows": "1:305294479713:web:2f1d53fd6602916a7f7520"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint",
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ],
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "emulators": {
+    "singleProjectMode": true,
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "database": {
+      "port": 9000
+    },
+    "storage": {
+      "port": 9199
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}
