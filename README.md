@@ -194,10 +194,6 @@ Edusign-Bridge/
 
 ---
 
-## License
-
-This project was built for a hackathon. All third-party services (MediaPipe, TensorFlow Lite, Google Cloud APIs, Firebase) are used under their respective licenses.
-
 ## Acknowledgments
 
 - [MediaPipe](https://developers.google.com/mediapipe) — hand and face landmark detection
