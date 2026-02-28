@@ -14,38 +14,38 @@ Built for Android (iOS structure included but untested). Requires a physical dev
 ┌──────────────────────────────────────────────────────────────────┐
 │                     Flutter Mobile App (Dart)                    │
 │                                                                  │
-│  ┌──────────────────────┐       ┌──────────────────────────┐    │
-│  │   Sign-to-Voice      │       │    Voice-to-Sign         │    │
-│  │   ────────────       │       │    ────────────          │    │
-│  │   Camera feed →      │       │   Mic recording →        │    │
-│  │   Native Platform    │       │   Cloud STT →            │    │
-│  │   Channel (Kotlin)   │       │   Gemini gloss mapping → │    │
-│  │                      │       │   Sign video playback    │    │
-│  └──────────────────────┘       └──────────────────────────┘    │
+│  ┌──────────────────────┐       ┌──────────────────────────┐     │
+│  │   Sign-to-Voice      │       │    Voice-to-Sign         │     │
+│  │   ────────────       │       │    ────────────          │     │
+│  │   Camera feed →      │       │   Mic recording →        │     │
+│  │   Native Platform    │       │   Cloud STT →            │     │
+│  │   Channel (Kotlin)   │       │   Gemini gloss mapping → │     │
+│  │                      │       │   Sign video playback    │     │
+│  └──────────────────────┘       └──────────────────────────┘     │
 ├──────────────────────────────────────────────────────────────────┤
 │              Native Android Layer (Kotlin)                       │
 │                                                                  │
-│  NativeCameraView ─── processes each frame ──┐                  │
-│      │                                       │                  │
-│      ├── SignLanguageAnalyzer                 │                  │
-│      │     MediaPipe HandLandmarker           │                  │
-│      │     → 21 landmarks normalized         │                  │
-│      │     → FingerspellingClassifier         │                  │
-│      │       (geometric rule engine, A-Z)     │                  │
-│      │                                       │                  │
-│      └── EmotionAnalyzer                     │                  │
-│            MediaPipe FaceLandmarker           │                  │
-│            → 52 blendshape scores            │                  │
-│            → TFLite classifier               │                  │
-│            → majority-vote smoothing         │                  │
+│  NativeCameraView ─── processes each frame ──┐                   │
+│      │                                       │                   │
+│      ├── SignLanguageAnalyzer                │                   │
+│      │     MediaPipe HandLandmarker          │                   │
+│      │     → 21 landmarks normalized         │                   │
+│      │     → FingerspellingClassifier        │                   │
+│      │       (geometric rule engine, A-Z)    │                   │
+│      │                                       │                   │
+│      └── EmotionAnalyzer                     │                   │
+│            MediaPipe FaceLandmarker          │                   │
+│            → 52 blendshape scores            │                   │
+│            → TFLite classifier               │                   │
+│            → majority-vote smoothing         │                   │
 ├──────────────────────────────────────────────────────────────────┤
 │              Firebase Cloud Functions (TypeScript)               │
 │                                                                  │
-│  glossToSentence  ── Gemini 2.5 Flash (gloss → sentence)        │
-│  sentenceToGloss  ── Gemini 2.5 Flash  (sentence → gloss)      │
-│  textToSpeech     ── Google Cloud TTS (emotion-aware pitch/rate)│
-│  speechToText     ── Google Cloud STT                           │
-│  translateText    ── Google Cloud Translation API               │
+│  glossToSentence  ── Gemini 2.5 Flash (gloss → sentence)         │
+│  sentenceToGloss  ── Gemini 2.5 Flash  (sentence → gloss)        │
+│  textToSpeech     ── Google Cloud TTS (emotion-aware pitch/rate) │
+│  speechToText     ── Google Cloud STT                            │
+│  translateText    ── Google Cloud Translation API                │
 │  lookupSignVideos ── Firebase Storage video lookup               │
 └──────────────────────────────────────────────────────────────────┘
 ```
